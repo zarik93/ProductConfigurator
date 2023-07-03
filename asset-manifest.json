@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ProductConfigurator/static/css/main.bd1d2d19.css",
+    "main.js": "/ProductConfigurator/static/js/main.08cc90ca.js",
+    "index.html": "/ProductConfigurator/index.html",
+    "main.bd1d2d19.css.map": "/ProductConfigurator/static/css/main.bd1d2d19.css.map",
+    "main.08cc90ca.js.map": "/ProductConfigurator/static/js/main.08cc90ca.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bd1d2d19.css",
+    "static/js/main.08cc90ca.js"
+  ]
+}
