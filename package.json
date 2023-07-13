@@ -1,5 +1,5 @@
 {
-  "homepage": "http://zarik93.github.io/ProductConfigurator",
+  "homepage": "",
   "name": "product-configurator",
   "version": "0.1.0",
   "private": true,
@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^5.0.0"
+    "gh-pages": "^5.0.0",
+    "rc-input-number": "^8.0.1"
   }
 }

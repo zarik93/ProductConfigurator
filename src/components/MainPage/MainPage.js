@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Button,
   Cascader,
   DatePicker,
   Form,
-  Input,
   InputNumber,
   Radio,
   Select,
@@ -14,20 +13,17 @@ import Header from './Header'
 
 import './MainPage.css'
 
-function MainPage() {
-  const [componentSize, setComponentSize] = useState('large')
-  const onFormLayoutChange = ({ size }) => {
-    setComponentSize(size)
+const MainPage = () => {
+  const [priceCar, setPrice] = useState(0)
+  const [number, setNumber] = useState()
+
+  useEffect(() => {
+    console.log('Значення input:', priceCar)
+  }, [priceCar])
+
+  const handleChange = (e) => {
+    setNumber(e.target.value)
   }
-
-  // useEffect(() => {
-  //   // Value
-  //
-  // }, [Value])
-
-  // const handleOrder = () => {
-  //   // order
-  // }
 
   return (
     <div className="main-page">
@@ -42,11 +38,11 @@ function MainPage() {
             span: 13,
           }}
           layout="horizontal"
-          initialValues={{
-            size: componentSize,
-          }}
-          onValuesChange={onFormLayoutChange}
-          size={componentSize}
+          // initialValues={{
+          //   size: componentSize,
+          // }}
+          // onValuesChange={onFormLayoutChange}
+          // size={componentSize}
           style={{
             maxWidth: 600,
           }}
@@ -64,14 +60,22 @@ function MainPage() {
             </Radio.Group>
           </Form.Item>
           <Form.Item name="radio-group" label="Auction">
-            <Radio.Group>
-              <Radio value="a">Copart</Radio>
-              <Radio value="b">IAAI</Radio>
-              <Radio value="c">PLC</Radio>
-            </Radio.Group>
+            <div>
+              <Radio.Group onChange={handleChange}>
+                <Radio value={100}>Copart</Radio>
+                <Radio value={200}>IAAI</Radio>
+                <Radio value={300}>PLC</Radio>
+              </Radio.Group>
+            </div>
           </Form.Item>
           <Form.Item label="Price">
-            <Input />
+            <InputNumber
+              // autocomplete="on"
+              value={priceCar}
+              // onChange={priceCarHandler}
+              // formatter={formatPrice}
+              min={0}
+            />
           </Form.Item>
           <Form.Item label="State">
             <Select>
@@ -132,7 +136,7 @@ function MainPage() {
             <DatePicker picker="year" />
           </Form.Item>
           <Form.Item label="Engine cc">
-            <InputNumber />
+            <InputNumber min={0} max={9999} />
           </Form.Item>
           <Form.Item label="Switch" valuePropName="checked">
             <Switch />
@@ -147,6 +151,10 @@ function MainPage() {
             src="https://www.dodge.com/mediaserver/iris?client=FCAUS&market=U&brand=D&vehicle=2022_LD&paint=PCD&fabric=&sa=LDDT48,2DZ,27Z,APA&pov=fronthero&width=300&height=200&bkgnd=transparent&resp=png&x=&y=&w=&h=&width=300&width=300"
             alt="car"
           ></img>
+        </div>
+        <div className="Price">
+          <span>{priceCar}</span>
+          <span>{number}</span>
         </div>
       </div>
     </div>

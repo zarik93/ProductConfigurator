@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import formReducer from './reducers/formReducer'
+import auctionReducer from './reducers/auctionSlice'
 
 const store = configureStore({
   reducer: {
-    form: formReducer,
+    auctionPrice: auctionReducer,
   },
 })
 
