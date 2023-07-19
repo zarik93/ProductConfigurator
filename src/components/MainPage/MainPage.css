@@ -1,18 +1,30 @@
 .main-page {
 }
+.form-container {
+  width: 100%;
+  flex-direction: row;
+  display: flex;
+}
 .image-car {
   flex-grow: 1;
+}
+.image-car img {
+  max-width: 300px;
 }
 .form-style {
   flex-grow: 3;
 }
+
 .container {
   margin: 0 auto;
-  display: flex;
   max-width: 1000px;
   min-height: 800px;
   background-color: #f2f2f2;
-  flex-direction: row;
   justify-content: center;
   padding: 50px 30px;
+}
+.Price span {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 2px 12px;
 }
